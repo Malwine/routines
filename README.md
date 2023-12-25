@@ -23,7 +23,8 @@ A lightweight app to track routines such as fitness workouts.
 
 ### V4
 
-- [ ] Track detailes exercises with repetition or minutes
+- [ ] Track detailed exercises with repetition or minutes
+- [ ] Toggle exercise card
 
 ### V5
 
