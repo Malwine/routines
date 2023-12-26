@@ -1,17 +1,20 @@
-import { useState } from "react";
 import "./App.css";
+import Button from "./components/Button";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const handleOnClick = () => {
+    console.log("Clicked!");
+  };
 
   return (
     <>
       <h1>Routines</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <p>
+        Embracing routines empowers you to craft a path towards success,
+        enabling consistent progress, building discipline, and unlocking your
+        fullest potential every single day.
+      </p>
+      <Button onClick={handleOnClick}>Let's go!</Button>
     </>
   );
 }
