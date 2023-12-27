@@ -1,20 +1,20 @@
+import { useState } from "react";
 import "./App.css";
-import Button from "./components/Button";
+import Routines from "./components/Routines";
+import Start from "./components/Start";
+import ViewState, {ChangeViewState} from "./ViewState";
 
 function App() {
-  const handleOnClick = () => {
-    console.log("Clicked!");
+  const [currentView, setCurrentView] = useState(ViewState.Home);
+  const handleOnClick = (newView: ChangeViewState) => {
+    console.log('Handled')
+    setCurrentView(newView.to);
   };
 
   return (
     <>
-      <h1>Routines</h1>
-      <p>
-        Embracing routines empowers you to craft a path towards success,
-        enabling consistent progress, building discipline, and unlocking your
-        fullest potential every single day.
-      </p>
-      <Button onClick={handleOnClick}>Let's go!</Button>
+      {currentView === ViewState.Home ? <Start onStartClick={handleOnClick} /> : null}
+      {currentView === ViewState.Routines ? <Routines /> : null}
     </>
   );
 }

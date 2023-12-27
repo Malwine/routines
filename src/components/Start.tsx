@@ -1,12 +1,14 @@
 import Button from "./Button";
+import ViewState, { ChangeViewState } from '../ViewState';
+
 interface StartProps {
-  onButtonClick: () => void;
-  onStartClick: () => void;
+  onStartClick: (newState: ChangeViewState) => void;
 }
 
-const Start = (onButtonClick: StartProps) => {
-  const handleStartClick = () => {
-    console.log("Click event reached Start");
+const Start = (startProps: StartProps) => {
+
+  const clickHandler = () => {
+    startProps.onStartClick({to: ViewState.Routines});
   };
 
   return (
@@ -17,7 +19,7 @@ const Start = (onButtonClick: StartProps) => {
         enabling consistent progress, building discipline, and unlocking your
         fullest potential every single day.
       </p>
-      <Button onButtonClick={onButtonClick} onStartClick={handleStartClick}>
+      <Button onClick={clickHandler}>
         Let's go!
       </Button>
     </div>
