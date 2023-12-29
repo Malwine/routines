@@ -1,0 +1,15 @@
+.primary {
+  border-radius: 4px;
+  background: #FFB800; 
+  border: none;
+  border-bottom: 4px solid #DEA718;
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.primary:hover {
+  margin-top: 4px;
+  border-bottom: none;
+}
