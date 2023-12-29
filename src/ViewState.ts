@@ -1,10 +1,12 @@
 enum ViewState {
-    Home = 1,
-    Routines = 2
+    Home,
+    Routines,
+    Routine
 }
 
 export interface ChangeViewState {
-    to: ViewState
+    to: ViewState,
+    name?: string
 }
 
 export default ViewState;

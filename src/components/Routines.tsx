@@ -5,11 +5,13 @@ import Button from "./Button";
 interface RoutinesProps {
   routines: string[];
   onBackClick: (newState: ChangeViewState) => void;
+  onShowRoutineClick: (newState: ChangeViewState) => void;
 }
 
 const Routines = (routinesProps: RoutinesProps) => {
-  const handleOnClick = () => {
-    console.log("Clicked!");
+  const handleOnClick = (name: string) => {
+    console.log("Handled: " + name)
+    routinesProps.onShowRoutineClick({ to: ViewState.Routine, name: name });
   };
 
   const handleBackClick = () => {
@@ -20,7 +22,7 @@ const Routines = (routinesProps: RoutinesProps) => {
     <div>
       <h1>Routines</h1>
         {routinesProps.routines.map((routine, index) => {
-          return <Button key={index} onClick={handleOnClick}>{routine}</Button>;
+          return <Button key={index} onClick={() => {handleOnClick(routine)}}>{routine}</Button>;
         })}
       <Button onClick={handleBackClick}>Back</Button>
     </div>
