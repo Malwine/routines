@@ -1,7 +1,9 @@
 import ViewState, { ChangeViewState } from "../ViewState";
 import Button from "./Button";
 
+
 interface RoutinesProps {
+  routines: string[];
   onBackClick: (newState: ChangeViewState) => void;
 }
 
@@ -17,9 +19,9 @@ const Routines = (routinesProps: RoutinesProps) => {
   return (
     <div>
       <h1>Routines</h1>
-      <Button onClick={handleOnClick}>Fitness</Button>
-      <Button onClick={handleOnClick}>Eisbaden</Button>
-      <Button onClick={handleOnClick}>Yoga</Button>
+        {routinesProps.routines.map((routine, index) => {
+          return <Button key={index} onClick={handleOnClick}>{routine}</Button>;
+        })}
       <Button onClick={handleBackClick}>Back</Button>
     </div>
   );
