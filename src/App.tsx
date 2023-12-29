@@ -6,6 +6,7 @@ import ViewState, {ChangeViewState} from "./ViewState";
 
 function App() {
   const [currentView, setCurrentView] = useState(ViewState.Home);
+  
   const handleOnClick = (newView: ChangeViewState) => {
     console.log('Handled')
     setCurrentView(newView.to);
@@ -14,7 +15,7 @@ function App() {
   return (
     <>
       {currentView === ViewState.Home ? <Start onStartClick={handleOnClick} /> : null}
-      {currentView === ViewState.Routines ? <Routines /> : null}
+      {currentView === ViewState.Routines ? <Routines onBackClick={handleOnClick} /> : null}
     </>
   );
 }

@@ -1,8 +1,17 @@
+import ViewState, { ChangeViewState } from "../ViewState";
 import Button from "./Button";
 
-const Routines = () => {
+interface RoutinesProps {
+  onBackClick: (newState: ChangeViewState) => void;
+}
+
+const Routines = (routinesProps: RoutinesProps) => {
   const handleOnClick = () => {
     console.log("Clicked!");
+  };
+
+  const handleBackClick = () => {
+    routinesProps.onBackClick({ to: ViewState.Home });
   };
 
   return (
@@ -11,6 +20,7 @@ const Routines = () => {
       <Button onClick={handleOnClick}>Fitness</Button>
       <Button onClick={handleOnClick}>Eisbaden</Button>
       <Button onClick={handleOnClick}>Yoga</Button>
+      <Button onClick={handleBackClick}>Back</Button>
     </div>
   );
 };
