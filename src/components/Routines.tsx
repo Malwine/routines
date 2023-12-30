@@ -2,13 +2,13 @@ import ViewState, { ChangeViewState } from "../ViewState";
 import Button from "./Button";
 
 
-interface RoutinesProps {
+interface Props {
   routines: string[];
   onBackClick: (newState: ChangeViewState) => void;
   onShowRoutineClick: (newState: ChangeViewState) => void;
 }
 
-const Routines = (routinesProps: RoutinesProps) => {
+const Routines = (routinesProps: Props) => {
   const handleOnClick = (name: string) => {
     console.log("Handled: " + name)
     routinesProps.onShowRoutineClick({ to: ViewState.Routine, name: name });

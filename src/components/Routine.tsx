@@ -1,10 +1,10 @@
 import Button from './Button';
 
-interface RoutineProps {
+interface Props {
   name: string;
 }
 
-const Routine = (props: RoutineProps) => {
+const Routine = (props: Props) => {
   return (
     <div>
       <h1>{props.name}</h1>

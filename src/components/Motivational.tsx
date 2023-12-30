@@ -1,14 +1,14 @@
 import Button from "./Button";
 import ViewState, { ChangeViewState } from '../ViewState';
 
-interface StartProps {
-  onStartClick: (newState: ChangeViewState) => void;
+interface Props {
+  onMotivationalClick: (newState: ChangeViewState) => void;
 }
 
-const Start = (startProps: StartProps) => {
+const Motivational = (props: Props) => {
 
   const clickHandler = () => {
-    startProps.onStartClick({to: ViewState.Routines});
+    props.onMotivationalClick({to: ViewState.Routines});
   };
 
   return (
@@ -26,4 +26,4 @@ const Start = (startProps: StartProps) => {
   );
 };
 
-export default Start;
+export default Motivational;

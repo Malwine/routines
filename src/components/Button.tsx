@@ -1,11 +1,11 @@
 import styles from "../styles/Button.module.css";
 
-interface ButtonProps {
+interface Props {
   children: string;
   onClick: () => void;
 }
 
-const Button = ({ children, onClick }: ButtonProps) => {
+const Button = ({ children, onClick }: Props) => {
   return (
     <button className={styles.primary} onClick={onClick}>
       {children}
