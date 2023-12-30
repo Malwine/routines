@@ -1,16 +1,30 @@
+import ViewState, { ChangeViewState } from "../ViewState";
 import Button from "./Button";
 
-const Routines = () => {
-  const handleOnClick = () => {
-    console.log("Clicked!");
+
+interface Props {
+  routines: string[];
+  onBackClick: (newState: ChangeViewState) => void;
+  onShowRoutineClick: (newState: ChangeViewState) => void;
+}
+
+const Routines = (routinesProps: Props) => {
+  const handleOnClick = (name: string) => {
+    console.log("Handled: " + name)
+    routinesProps.onShowRoutineClick({ to: ViewState.Routine, name: name });
+  };
+
+  const handleBackClick = () => {
+    routinesProps.onBackClick({ to: ViewState.Home });
   };
 
   return (
     <div>
       <h1>Routines</h1>
-      <Button onClick={handleOnClick}>Fitness</Button>
-      <Button onClick={handleOnClick}>Eisbaden</Button>
-      <Button onClick={handleOnClick}>Yoga</Button>
+        {routinesProps.routines.map((routine, index) => {
+          return <Button key={index} onClick={() => {handleOnClick(routine)}}>{routine}</Button>;
+        })}
+      <Button onClick={handleBackClick}>Back</Button>
     </div>
   );
 };

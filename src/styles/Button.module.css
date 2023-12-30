@@ -1,13 +1,21 @@
 .primary {
   border-radius: 4px;
-  background: #FFB800; 
+  background: #FFB800;
   border: none;
   border-bottom: 4px solid #DEA718;
-  width: 100%;
+  width: 80%;
   padding: 15px 10px;
   font-size: 20px;
   cursor: pointer;
+  margin-bottom: 15px;
 }
+
+@media only screen and (max-width: 375px) {
+  .primary {
+    width: 100%;
+  }
+}
+
 
 .primary:hover {
   margin-top: 4px;
