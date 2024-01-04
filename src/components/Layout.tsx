@@ -1,7 +1,7 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-const Layout: React.FunctionComponent<PropsWithChildren> = () => {
+const Layout: React.FunctionComponent = () => {
   return <div><Outlet /></div>;
 };
 
