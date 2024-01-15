@@ -1,23 +1,27 @@
 .primary {
+  padding: 15px 0px;
+  font-size: 20px;
   border-radius: 4px;
   background: #FFB800;
-  border: none;
-  border-bottom: 4px solid #DEA718;
-  width: 80%;
-  padding: 15px 10px;
-  font-size: 20px;
   cursor: pointer;
-  margin-bottom: 15px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  box-shadow: 0px 4px 0px #DEA718;
+  position: relative;
 }
-
-@media only screen and (max-width: 375px) {
-  .primary {
-    width: 100%;
-  }
-}
-
 
 .primary:hover {
-  margin-top: 4px;
-  border-bottom: none;
+  top: 3px;
+  box-shadow: 0px 0px 0px;
+}
+
+.primary:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.buttonWrapper {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
