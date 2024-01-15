@@ -3,11 +3,28 @@ import Button from '../components/Button';
 import data from '../data.json';
 import wrapperStyle from "../styles/Wrapper.module.css";
 
+interface Params {
+  routine: string;
+}
+
 interface Payload {
   data: { routine: {name: string, iterations: string[]} }
 }
 
-export async function loader({ params } ) {
+interface Iteration {
+  date: string;
+}
+
+interface RoutineData {
+  name: string;
+  iterations?: Iteration[];
+}
+
+interface Payload {
+  routine: RoutineData;
+}
+
+export async function loader({ params }: { params: Params }) {
   return { routine: data.routines.find(routine => routine.name === params.routine) };
 }
 
@@ -27,7 +44,7 @@ const Routine = () => {
       <h3>Past iterations:</h3>
 
       {data.routine.iterations && data.routine.iterations.map( (iteration, index) => {
-        return (<div key={index}>{ Date(iteration.date).toLocaleString()}</div>)
+        return (<div key={index}>{ iteration.date }</div>)
       })}
     </div>
   );
