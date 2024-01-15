@@ -13,7 +13,9 @@ const Routines = () => {
     <div>
       <h1>Routines</h1>
         {routines.map((routine, index) => {
-          return <Link key={index} className={styles.primary} to={`/routines/${routine}`}>{routine}</Link>;
+          return <div className={styles.buttonWrapper}>
+                  <Link key={index} className={styles.primary} to={`/routines/${routine}`}>{routine}</Link>
+                </div>
         })}
       <Link key={"back"} className={styles.primary} to={`/`}>Back</Link>
     </div>
