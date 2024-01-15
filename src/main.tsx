@@ -9,6 +9,7 @@ import Motivational from './routes/Motivational.tsx';
 import Routines, { loader as routinesLoader } from './routes/Routines.tsx';
 import Routine, { loader as routineLoader } from './routes/Routine.tsx';
 import Layout from './components/Layout.tsx';
+import NewRoutine from './routes/NewRoutine.tsx';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
             path: ":routine",
             element: <Routine />,
             loader: routineLoader,
-
+          },
+          {
+            path: "new",
+            element: <NewRoutine />,
+            loader: routineLoader,
           }
         ]
       }

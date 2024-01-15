@@ -5,10 +5,12 @@
   background: #FFB800;
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
   display: block;
   width: 100%;
   box-shadow: 0px 4px 0px #DEA718;
   position: relative;
+  border: none;
 }
 
 .primary:hover {
@@ -19,9 +21,4 @@
 .primary:visited {
   color: black;
   text-decoration: none;
-}
-
-.buttonWrapper {
-  margin-top: 15px;
-  margin-bottom: 15px;
 }

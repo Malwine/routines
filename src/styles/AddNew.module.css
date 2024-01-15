@@ -1,0 +1,14 @@
+.addNew {
+  text-decoration: none;
+}
+
+.addNew:visited {
+  color: #6B6B6B;
+}
+
+.addPlus {
+  color: #DEA718;
+  font-weight: bold;
+  display: inline;
+  margin-right: 5px;
+}
