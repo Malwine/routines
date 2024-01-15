@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
-import Button from "../components/Button";
+import styles from "../styles/Button.module.css";
 import data from "../data.json";
 
 export async function loader() {
@@ -13,9 +13,9 @@ const Routines = () => {
     <div>
       <h1>Routines</h1>
         {routines.map((routine, index) => {
-          return <Link key={index} to={`/routines/${routine}`}>{routine}</Link>;
+          return <Link key={index} className={styles.primary} to={`/routines/${routine}`}>{routine}</Link>;
         })}
-      <Link key={"back"} to={`/`}>Back</Link>
+      <Link key={"back"} className={styles.primary} to={`/`}>Back</Link>
     </div>
   );
 };
