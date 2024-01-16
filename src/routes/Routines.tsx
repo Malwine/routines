@@ -9,14 +9,14 @@ export async function loader() {
 }
 
 const Routines = () => {
-  const { routines } = useLoaderData() as { routines: string[] };
+  const { routines } = useLoaderData() as { routines: { name: string }[] };
 
   return (
     <div>
       <h1>Routines</h1>
         {routines.map((routine, index) => {
           return <div className={wrapperStyle.button}>
-                  <Link key={index} className={styles.primary} to={`/routines/${routine}`}>{routine}</Link>
+                  <Link key={index} className={styles.primary} to={`/routines/${routine.name}`}>{routine.name}</Link>
                 </div>
         })}
       {/* <Link key="back" className={styles.primary} to={`/`}>Back</Link> */}
