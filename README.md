@@ -50,7 +50,7 @@ A lightweight app to track routines such as fitness workouts.
       - iteration \<Object>
         - start <String (ISO 8601 format)>   
         - end <String (ISO 8601 format)>
-        - exercises[] \<Object Array>  
+        - units[] \<Object Array>  
           - name \<String>
           - description \<String>
           - done? \<Boolean>
