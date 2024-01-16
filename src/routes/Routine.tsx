@@ -2,6 +2,7 @@ import { useLoaderData } from 'react-router-dom';
 import Button from '../components/Button';
 import data from '../data.json';
 import wrapperStyle from "../styles/Wrapper.module.css";
+import { formatDate } from '../lib/dateConversion';
 
 interface Params {
   routine: string;
@@ -12,7 +13,7 @@ interface Payload {
 }
 
 interface Iteration {
-  date: string;
+  start: string;
 }
 
 interface RoutineData {
@@ -44,7 +45,7 @@ const Routine = () => {
       <h3>Past iterations:</h3>
 
       {data.routine.iterations && data.routine.iterations.map( (iteration, index) => {
-        return (<div key={index}>{ iteration.date }</div>)
+        return (<div key={index}>{ formatDate(iteration.start) }</div>)
       })}
     </div>
   );
