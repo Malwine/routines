@@ -5,10 +5,6 @@ import jsonData from '../data.json';
 import wrapperStyle from "../styles/Wrapper.module.css";
 import { formatDate } from '../lib/dateConversion';
 
-interface Payload {
-  data: { routine: {name: string, iterations: string[]} }
-}
-
 interface Iteration {
   start: string;
 }
@@ -18,20 +14,16 @@ interface RoutineData {
   iterations?: Iteration[];
 }
 
-interface Payload {
-  routine: RoutineData;
-}
-
 export async function loader({ params }: {params: Params}) {
-  return { routine: jsonData.routines.find(routine => routine.name === params.routine) };
+  return jsonData.routines.find(routine => routine.name === params.routine);
 }
 
 const Routine = () => {
-  const data = useLoaderData() as Payload;
+  const routine = useLoaderData() as RoutineData;
 
   return (
     <div>
-      <h1>{ data.routine.name }</h1>
+      <h1>{ routine.name }</h1>
       <div className={wrapperStyle.button}>
         <Button onClick={()=> {}}>Start</Button>
       </div>
@@ -41,7 +33,7 @@ const Routine = () => {
 
       <h3>Past iterations:</h3>
 
-      {data.routine.iterations && data.routine.iterations.map( (iteration, index) => {
+      {routine.iterations && routine.iterations.map( (iteration, index) => {
         return (<div key={index}>{ formatDate(iteration.start) }</div>)
       })}
     </div>
