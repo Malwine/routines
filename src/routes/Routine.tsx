@@ -2,7 +2,6 @@ import { useLoaderData } from 'react-router-dom';
 import type { Params } from "react-router-dom";
 import Button from '../components/Button';
 import jsonData from '../data.json';
-import wrapperStyle from "../styles/Wrapper.module.css";
 import { formatDate } from '../lib/dateConversion';
 
 interface Iteration {
@@ -24,12 +23,8 @@ const Routine = () => {
   return (
     <div>
       <h1>{ routine.name }</h1>
-      <div className={wrapperStyle.button}>
         <Button onClick={()=> {}}>Start</Button>
-      </div>
-      <div className={wrapperStyle.button}>
         <Button onClick={()=> {}}>End</Button>
-      </div>
 
       <h3>Past iterations:</h3>
 
