@@ -1,6 +1,7 @@
 {
   "routines": [
     {
+      "id": 1,
       "name": "Fitness",
       "iterations": [
         {
@@ -43,6 +44,7 @@
       ]
     },
     {
+      "id": 2,
       "name": "Eisbaden",
       "iterations": [
         {
@@ -68,6 +70,7 @@
       ]
     },
     {
+      "id": 3,
       "name": "Yoga",
       "iterations": [
         {
