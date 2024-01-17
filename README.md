@@ -10,7 +10,7 @@ A lightweight app to track routines such as fitness workouts.
 - [x] Create [app design in Figma](https://www.figma.com/file/0P9jKFJoGaWL2kz5Le4fY1/Fitness-Routines?type=design&node-id=0%3A1&mode=design&t=H40qrGNbU17FIl0r-1)
 - [x] Add views
 - [x] Insert sample data
-- [ ] Deploy on Vercel
+- [x] Deploy on Vercel
 
 ### V2
 
