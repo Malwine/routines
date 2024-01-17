@@ -1,12 +1,9 @@
 import { useLoaderData } from 'react-router-dom';
+import type { Params } from "react-router-dom";
 import Button from '../components/Button';
-import data from '../data.json';
+import jsonData from '../data.json';
 import wrapperStyle from "../styles/Wrapper.module.css";
 import { formatDate } from '../lib/dateConversion';
-
-interface Params {
-  routine: string;
-}
 
 interface Payload {
   data: { routine: {name: string, iterations: string[]} }
@@ -25,8 +22,8 @@ interface Payload {
   routine: RoutineData;
 }
 
-export async function loader({ params }: { params: Params }) {
-  return { routine: data.routines.find(routine => routine.name === params.routine) };
+export async function loader({ params }: {params: Params}) {
+  return { routine: jsonData.routines.find(routine => routine.name === params.routine) };
 }
 
 const Routine = () => {

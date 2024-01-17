@@ -36,7 +36,6 @@ const router = createBrowserRouter([
           {
             path: "new",
             element: <NewRoutine />,
-            loader: routineLoader,
           }
         ]
       }
