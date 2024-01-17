@@ -1,4 +1,5 @@
 .primary {
+  color: black;
   padding: 15px 0px;
   font-size: 20px;
   border-radius: 4px;
@@ -11,6 +12,8 @@
   box-shadow: 0px 4px 0px #DEA718;
   position: relative;
   border: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .primary:hover {
