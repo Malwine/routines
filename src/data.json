@@ -6,6 +6,7 @@
       "iterations": [
         {
           "start": "2023-12-05T08:30:00.000Z",
+          "running": false,
           "end": "2023-12-05T09:30:00.000Z",
           "units": [
             {
